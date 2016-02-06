@@ -5,6 +5,9 @@
 class ofApp : public ofBaseApp{
 
 	public:
+    void drawHead();
+    void drawHat();
+    void drawFace();
 		void setup();
 		void update();
 		void draw();
