@@ -13,11 +13,19 @@ void ofApp::drawHat(){
 
 void ofApp::drawFace(){
     ofSetColor(255);
-    ofDrawEllipse(ofGetWidth()/2-30, ofGetHeight()/2-50, 40, 40);
-    ofDrawEllipse(ofGetWidth()/2+30, ofGetHeight()/2-50, 40, 40);
+    ofDrawEllipse(ofGetWidth()/2-35, ofGetHeight()/2-50, 40, 40);
+    ofDrawEllipse(ofGetWidth()/2+35, ofGetHeight()/2-50, 40, 40);
     ofSetColor(0);
-    ofDrawEllipse(ofGetWidth()/2-30, ofGetHeight()/2-50, 10, 10);
-    ofDrawEllipse(ofGetWidth()/2+30, ofGetHeight()/2-50, 10, 10);
+    ofDrawEllipse(ofGetWidth()/2-35, ofGetHeight()/2-50, 10, 10);
+    ofDrawEllipse(ofGetWidth()/2+35, ofGetHeight()/2-50, 10, 10);
+}
+
+void ofApp::noseAndGlasses(){
+    ofDrawRectangle(mouseX - 70, mouseY - 20, 60, 60);
+    ofDrawRectangle(mouseX + 10, mouseY - 20, 60, 60);
+    ofDrawLine(mouseX - 70, mouseY - 20, mouseX + 70, mouseY - 20);
+
+    ofDrawTriangle(mouseX, mouseY + 50, mouseX - 20, mouseY + 90, mouseX + 20, mouseY + 90);
 }
 
 //--------------------------------------------------------------
@@ -36,6 +44,7 @@ void ofApp::draw(){
     drawHead();
     drawHat();
     drawFace();
+    noseAndGlasses();
     
 }
 

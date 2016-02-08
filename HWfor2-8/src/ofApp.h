@@ -8,6 +8,7 @@ class ofApp : public ofBaseApp{
     void drawHead();
     void drawHat();
     void drawFace();
+    void noseAndGlasses();
 		void setup();
 		void update();
 		void draw();
