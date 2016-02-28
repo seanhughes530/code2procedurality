@@ -47,31 +47,26 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
-    float rcolor = ofGetElapsedTimeMillis();
-    float gcolor = ofGetElapsedTimeMillis();
-    float bcolor = ofGetElapsedTimeMillis();
-    ofSetBackgroundColor(rcolor,gcolor,bcolor);
     
     ofPushMatrix();
     ofTranslate(ofGetWidth()/2,ofGetHeight());
-    drawBranch(600,cos(ofGetElapsedTimef())*300);
+    drawBranch(600,cos(ofGetElapsedTimef()/2)*300);
     ofPopMatrix();
     
     
     ofPushMatrix();
     ofTranslate(ofGetWidth()/2,ofGetHeight());
-    drawBranch(400,cos((ofGetElapsedTimef())*2)*250);
+    drawBranch(400,cos(ofGetElapsedTimef()*.75)*250);
     ofPopMatrix();
     
     ofPushMatrix();
     ofTranslate(ofGetWidth()/2,ofGetHeight());
-    drawBranch(200,cos((ofGetElapsedTimef())*3)*200);
+    drawBranch(200,cos(ofGetElapsedTimef())*200);
     ofPopMatrix();
     
     ofPushMatrix();
     ofTranslate(ofGetWidth()/2,ofGetHeight());
-    drawBranch(100,cos((ofGetElapsedTimef())*4)*150);
+    drawBranch(100,cos((ofGetElapsedTimef())*2)*150);
     ofPopMatrix();
     
     
