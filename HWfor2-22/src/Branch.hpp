@@ -21,5 +21,5 @@ public:
     float speed;
     
     void sway();
-    void draw(float xPos, float yPos);
+    void draw(float xPos, float yPos, float size);
 };

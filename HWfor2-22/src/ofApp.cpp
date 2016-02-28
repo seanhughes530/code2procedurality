@@ -16,7 +16,7 @@ void ofApp::update(){
 void ofApp::draw(){
     ofBackground(255,255,255);
     
-    Raindrop.draw(ofGetWidth()/2, ofGetHeight()/2);
+    Raindrop.draw(ofGetWidth()/2, ofGetHeight()/2, 10);
 }
 
 //--------------------------------------------------------------

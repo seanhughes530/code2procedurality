@@ -14,11 +14,11 @@ void Branch::sway(){
 }
 
 
-void Branch::draw(float xPos, float yPos){
+void Branch::draw(float xPos, float yPos, float size){
     cout << "I'm a rain drop!" << endl;
     
     ofSetColor(0);
     ofFill();
-    ofDrawTriangle(xPos, yPos, xPos-10, yPos+20, xPos+10, yPos+20);
-    ofDrawEllipse(xPos,yPos+22,20,20);
+    ofDrawTriangle(xPos, yPos, xPos-(size/2), yPos+size, xPos+(size/2), yPos+size);
+    ofDrawEllipse(xPos,yPos+(size*1.1),size,size);
 }
