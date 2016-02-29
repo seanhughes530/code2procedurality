@@ -24,9 +24,12 @@ class ofApp : public ofBaseApp{
     int r, g, b, alpha;
     int r2, g2, b2;
     int diam;
+    int angle;
     
     void drawBack(float length, float theta);
     
     void drawFor(float length, float theta);
+    
+    void spiral(float length);
 		
 };

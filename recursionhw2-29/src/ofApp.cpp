@@ -63,6 +63,18 @@ void ofApp::drawFor(float length, float theta){
     }
 }
 
+void ofApp::spiral(float length){
+    ofSetColor(r,g,b,255);
+    ofFill();
+    
+    ofDrawLine(0,0,0,-length);
+    
+    ofTranslate(0,-length);
+    ofRotate(45);
+    spiral(length-5);
+    
+}
+
 //--------------------------------------------------------------
 void ofApp::update(){
 
@@ -70,7 +82,9 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-               
+    
+    angle = ofMap(mouseX,0,ofGetWidth(),0,350);
+    
     ofPushMatrix();
     ofTranslate(ofGetWidth()/2,0);
     drawBack(ofGetHeight()/2, ofGetElapsedTimef()*50);
@@ -79,6 +93,16 @@ void ofApp::draw(){
     ofPushMatrix();
     ofTranslate(ofGetWidth()/2,0);
     drawFor(600, -ofGetElapsedTimef()*50);
+    ofPopMatrix();
+    
+    ofPushMatrix();
+    ofTranslate(ofGetWidth()/3,0);
+    drawFor(500, angle);
+    ofPopMatrix();
+    
+    ofPushMatrix();
+    ofTranslate(ofGetWidth()/2,ofGetHeight()/2);
+    spiral(10);
     ofPopMatrix();
 }
 
@@ -104,7 +128,16 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-
+    r = ofRandom(255);
+    g = ofRandom(255);
+    b = ofRandom(255);
+    alpha = ofRandom(0,150);
+    
+    r2 = ofRandom(255);
+    g2 = ofRandom(255);
+    b2 = ofRandom(255);
+    
+    diam = ofRandom(200,600);
 }
 
 //--------------------------------------------------------------
