@@ -17,10 +17,15 @@
 
 class Branches{
 public:
-    void setup(float _xPos, float _yPos, float _diam, ofColor _color);
+    void setup(float _xPos, float _yPos, float _diam, ofColor _color, float _angle);
     
 private:
     ofVec2f pos;
     float diam;
-    ofColor color
+    ofColor color;
+    float transPos;
+    ofVec2f newPos;
+    float angle;
+    float anchorPX1, anchorPY1;
+    float anchorPX2, anchorPY2;
 };

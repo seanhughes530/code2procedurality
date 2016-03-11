@@ -22,6 +22,11 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
+    float transPosX;
+    float transPosY;
+    float x;
+    float y;
+    
     Branches branch1;
 		
 };
