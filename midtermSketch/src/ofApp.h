@@ -21,6 +21,8 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+    void drawBackgrounds();
+    void drawRecursiveBackground(float length, float theta);
     
     float transPosX;
     float transPosY;
@@ -28,5 +30,7 @@ class ofApp : public ofBaseApp{
     float y;
     
     Branches branch1;
+    Branches branch2;
+    Branches branch3;
 		
 };
