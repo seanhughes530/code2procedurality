@@ -59,16 +59,25 @@ void ofApp::drawBackgrounds(){
 void ofApp::setup(){
     
     //ofSetFrameRate(25);
-    ofSetBackgroundAuto(true);
+    ofSetBackgroundAuto(false);
     ofSetBackgroundColor(0, 0, 0);
     transPosX = ofGetWidth()/2;
     transPosY = ofGetHeight();
+    
+    //coords for starting postion of branches
+    x = 10;
+    y = -10;
+    x1 = -ofGetWidth()/4;
+    x2 = ofGetWidth()/4;
+    
+    //branch1.setup(x, y, 9, ofColor(200,0,0, 150), ofDegToRad(300), 7);
+
     
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+    //branch1.update(0,0);
 }
 
 //--------------------------------------------------------------
@@ -82,14 +91,16 @@ void ofApp::draw(){
     }
     ofTranslate(transPosX, transPosY);
     
+    
     //draw backgrounds for movement
     drawBackgrounds();
     
+    //branch1.draw();
+    
     //recursive class called
-    branch1.setup(0, 0, 5, ofColor(200,0,0, 150), ofDegToRad(300), 7);
-    branch2.setup(-ofGetWidth()/4, 0, 7, ofColor(0,0,200, 150), ofDegToRad(250), 8);
-    branch3.setup(ofGetWidth()/4, 0, 5, ofColor(0,200,0, 150), ofDegToRad(100), 7.5);
-
+    branch1.setup(x, y, 9, ofColor(200,0,0, 150), ofDegToRad(300), 7);
+//    branch2.setup(x1, y, 7, ofColor(0,0,200, 150), ofDegToRad(250), 8);
+//    branch3.setup(x2, y, 5, ofColor(0,200,0, 150), ofDegToRad(100), 7.5);
 
 
 }

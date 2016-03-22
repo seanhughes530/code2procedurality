@@ -28,6 +28,8 @@ class ofApp : public ofBaseApp{
     float transPosY;
     float x;
     float y;
+    float x1;
+    float x2;
     
     Branches branch1;
     Branches branch2;

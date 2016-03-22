@@ -18,6 +18,8 @@
 class Branches : public ofBaseApp{
 public:
     void setup(float _xPos, float _yPos, float _diam, ofColor _color, float _angle, float _speed);
+    //void update(float _xPos, float _yPos);
+    //void draw();
     
 private:
     ofVec2f pos;
