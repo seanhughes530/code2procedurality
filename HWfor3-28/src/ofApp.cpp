@@ -1,70 +1,80 @@
 #include "ofApp.h"
 
-///////Example 8.1/////////
-//void ofApp::drawCircle(int x, int y, float rad){
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+///////////////////Exercise 8.1/////////////////////////
+//void ofApp::myCantor(float x, float y, float rad){
+//    ofSetColor(0);
 //    ofNoFill();
-//    ofDrawCircle(x, y, rad);
-//    if(rad > 2){
-//        rad *= 0.75;
-//        drawCircle(x, y, rad);
-//    }
+//    ofDrawCircle(x,y,rad);
+//    ofDrawCircle(x+rad*0.5,y,rad);
+//    ofDrawCircle(x-rad*0.5,y,rad);
+//        if(rad > 8){
+//            myCantor(x + rad*3, y, rad/2);
+//            myCantor(x - rad*3, y, rad/2);
+//            myCantor(x, y + rad*3, rad/2);
+//            myCantor(x, y - rad*3, rad/2);
+//        }
+//    rad *= 10;
+//    ofDrawLine(x+rad,y+rad,x-rad,y-rad);
+//    ofDrawLine(x-rad,y+rad,x+rad,y-rad);
 //}
 
 
-////////Example 8.2/////////
-//void ofApp::drawCircle(int x, int y, float rad){
-//    ofSetColor(0, 0, 0);
-//    ofNoFill();
-//    ofDrawCircle(x, y, rad);
-//    if(rad > 2){
-//        drawCircle(x + rad/2, y, rad/2);
-//        drawCircle(x - rad/2, y, rad/2);
-//    }
-//}
-
-
-////////Example 8.3/////////
-//void ofApp::drawCircle(int x, int y, float rad){
-//    ofSetColor(0, 0, 0);
-//    ofNoFill();
-//    ofDrawCircle(x, y, rad);
-//    if(rad > 8){
-//        drawCircle(x + rad/2, y, rad/2);
-//        drawCircle(x - rad/2, y, rad/2);
-//        drawCircle(x, y + rad/2, rad/2);
-//        drawCircle(x, y- rad/2, rad/2);
-//    }
-//}
-
-
-////////Example 8.4/////////
-void ofApp::cantor(float x, float y, float len){
-    ofSetColor(0);
-    ofNoFill();
-    ofDrawLine(x,y,x+len,y);
-    if(len >= 1){
-        y += 20;
-        cantor(x,y,len/3);
-        cantor(x+len*2/3,y,len/3);
+//////////////////Exercise 8.2///////////////////////////
+void ofApp::generate(){
+    for(KochLine l : lines){
+        ofVec2f a = l.kochA();
+        ofVec2f b = l.kochB();
+        ofVec2f c = l.kochC();
+        ofVec2f d = l.kochD();
+        ofVec2f e = l.kochE();
+        
+        next.push_back(KochLine(a,b));
+        next.push_back(KochLine(b,c));
+        next.push_back(KochLine(c,d));
+        next.push_back(KochLine(d,e));
     }
+    lines = next;
 }
 
 
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    
+    start.set(0,200);
+    ending.set(ofGetWidth(), 200);
+    
+//    KochLine.setup(start, ending);
+    
+    lines.push_back( KochLine(start,ending) );
+    
+    for(int i = 0; i < 5; i++){
+        generate();
+    }
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     ofSetBackgroundAuto(false);
-//    drawCircle(ofGetWidth()/2, ofGetHeight()/2, 800);
-    cantor(10,20,ofGetWidth()-20);
+    
+    ///////////////Excersise 8.1///////////////////
+//    myCantor(ofGetWidth()/2,ofGetHeight()/2,50);
+//    myCantor(ofGetWidth()/8,ofGetHeight()/2,20);
+//    myCantor(ofGetWidth()*7/8,ofGetHeight()/2,20);
+    
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
+    for (KochLine l : lines){
+        kLine.display();
+    }
 }
 
 //--------------------------------------------------------------

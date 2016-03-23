@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "KochLine.hpp"
 
 class ofApp : public ofBaseApp{
 
@@ -20,8 +21,15 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+
+    void myCantor(float x, float y, float rad);
+    void generate();
     
-    void drawCircle(int x, int y, float rad);
-    void cantor(float x, float y, float len);
-		
+    vector <KochLine> lines;
+    vector <KochLine> next;
+    
+    ofVec2f start;
+    ofVec2f ending;
+    
+    KochLine kLine;
 };
