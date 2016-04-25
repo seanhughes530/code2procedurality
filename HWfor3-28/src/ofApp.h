@@ -4,7 +4,7 @@
 #include "KochLine.hpp"
 
 class ofApp : public ofBaseApp{
-
+    
 	public:
 		void setup();
 		void update();
@@ -31,5 +31,5 @@ class ofApp : public ofBaseApp{
     ofVec2f start;
     ofVec2f ending;
     
-    KochLine kLine;
+    KochLine Kline;
 };

@@ -17,6 +17,8 @@
 class KochLine:public ofBaseApp{
 public:
     
+    KochLine(ofVec2f _start, ofVec2f _end);
+    
     ofVec2f start;
     ofVec2f end;
 
@@ -28,9 +30,9 @@ public:
     //    //void setup(ofVec2f a, ofVec2f b);
     void setup(ofVec2f a, ofVec2f b);
     void display();
-//        ofVec2f kochA();
-//        ofVec2f kochB();
-//        ofVec2f kochC();
-//        ofVec2f kochD();
-//        ofVec2f kochE();
+        ofVec2f kochA();
+        ofVec2f kochB();
+        ofVec2f kochC();
+        ofVec2f kochD();
+        ofVec2f kochE();
 };

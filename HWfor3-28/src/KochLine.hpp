@@ -16,6 +16,7 @@
 
 class KochLine:public ofBaseApp{
 public:
+    
     KochLine(ofVec2f a, ofVec2f b){
         start.set(a.x, a.y);
         end.set(b.x, b.y);

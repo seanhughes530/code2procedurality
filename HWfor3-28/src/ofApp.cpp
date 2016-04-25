@@ -49,7 +49,7 @@ void ofApp::setup(){
     start.set(0,200);
     ending.set(ofGetWidth(), 200);
     
-//    KochLine.setup(start, ending);
+    //KochLine.setup(start, ending);
     
     lines.push_back( KochLine(start,ending) );
     
@@ -73,7 +73,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     for (KochLine l : lines){
-        kLine.display();
+        Kline.display();
     }
 }
 
